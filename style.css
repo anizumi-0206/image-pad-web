@@ -1,0 +1,171 @@
+/* 初期化 */
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    height: fit-content;
+    background-color: rgba(255, 255, 255, 1);
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-inner {
+    padding: 0 5%;
+}
+
+/* ---------------------------------------------- */
+/* ハンバーガーメニュー */
+/* ------------------------- */
+#header-hamburger {
+    /* 見た目のCSS */
+    background: #6faa3c;
+    cursor: pointer;
+    width: 50px;
+    aspect-ratio: 1/1;
+    margin-left: auto;
+    /* ボタンがハンバーガーウィンドウの下に隠れないようにする指定 */
+    position: relative;
+    z-index: 10;
+}
+
+/* ----------------- */
+/* 三本線 */
+/* ----------------- */
+#header-hamburger span {
+    /* 見た目のCSS */
+    display: inline-block;
+    background: #fff;
+    width: 50%;
+    height: 2px;
+    /* バーガー線の太さ */
+    /*アニメーションの設定*/
+    transition: all .4s;
+    position: absolute;
+    left: 50%;
+    /* バーガー線の位置 */
+    transform: translateX(-50%);
+}
+
+/* １本目 */
+#header-hamburger span:nth-of-type(1) {
+    top: 30%;
+}
+
+/* ２本目 */
+#header-hamburger span:nth-of-type(2) {
+    top: 50%;
+}
+
+/* ３本目 */
+#header-hamburger span:nth-of-type(3) {
+    top: 70%;
+}
+
+/* ------------------ */
+/* ×印 */
+/* ------------------ */
+/*activeクラスが付与されると線が回転して×になる*/
+#header-hamburger.active span:nth-of-type(1) {
+    top: 50%;
+    left: 25%;
+    transform: rotate(-45deg);
+    width: 50%;
+}
+
+#header-hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+#header-hamburger.active span:nth-of-type(3) {
+    top: 50%;
+    left: 25%;
+    transform: rotate(45deg);
+    width: 50%;
+}
+
+/* ----------------------------------------------- */
+/* メニューウィンドウ */
+/* -------------------------- */
+#hamburger-window {
+    transition: 0.3s;
+    text-align: center;
+    /* 初期状態は非表示 */
+    visibility: hidden;
+    position: fixed;
+    top: 50px;
+    right: -100vw;
+    z-index: 1;
+    /* 画面いっぱいに表示されるサイズに設定 */
+    width: 100%;
+    height: calc(100vh - 50px);
+    /* 画面からはみ出したらスクロール可能にする */
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/*スクロールバー非表示（Chrome・Safari）*/
+.content::-webkit-scrollbar{
+    display:none;
+}
+
+#hamburger-window.open {
+    visibility: visible;
+    right: 0;
+}
+
+.hamburger-window__link {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.hamburger-window__link:hover {
+    background-color: #ccc;
+}
+
+.hamburger-window__link:first-child .menu-link {
+    border-top: 1px solid #ccc;
+}
+
+.menu-link {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 23px 0 23px 5%;
+    color: #333;
+}    
+
+.hamburger-window__link::after {
+    /* fontawesomeアイコンを表示 */
+    content: '\f054';
+    font-weight: 900;
+    font-family: "Font Awesome 6 Free";
+    display: inline-block;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    aspect-ratio: 1/1;
+    color: #333;
+}
+
+.hamburger-window__title {
+    color: #333;
+}    
