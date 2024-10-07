@@ -1,45 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-</head>  
-
-<!-- ヘッダー -->
-<header id="header" class="header">
-  <div id="header-inner" class="header-inner content-wrpper">
-    <!-- ハンバーガーボタン -->
-    <div id="header-hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Pad for VRChat</title>
+  <link rel="stylesheet" href="src/css/style.css" type="text/css">
+</head>
+<body>  
+<input type="checkbox" id="popup">
+<label class="popup-open" for="popup">画像をアップロードする</label>
+<div class="popup-overlay">
+    <div class="popup-window">
+      <h4 class="popup-h4">注意事項をご確認ください！</h4>
+        <p class="popup-text">本コンテンツを通じて生じた損害（NSFW画像を表示させた）などでVRChatのアカウントがBANされたなどの責任は負いかねます。<br>
+          本コンテンツを通じてアップロードされた画像及びコンテンツの保存期間はアップロード後24時間となっております。<br>
+          24時間経過後には画像は完全にサーバー側で削除されます。</p>
+          <div class="yes">
+            <a href="./upload.html">わかった！</a>
+          </div>
+          <div class="no">
+            <a href="https://google.com">やだ！</a>
+          </div>
+        <label class="popup-close" for="popup">
+            <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="0" x2="18" y2="18" stroke="white" stroke-width="3"></line>
+                <line x1="0" y1="18" x2="18" y2="0" stroke="white" stroke-width="3"></line>
+            </svg>
+        </label>
     </div>
-  </div>
-
-  <!-- ハンバーガーウィンドウ -->
-  <div id="hamburger-window">
-    <ul class="hamburger-window__nav-list">
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー１</a>
-      </li>
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー２</a>
-      </li>
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー３</a>
-      </li>
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー４</a>
-      </li>
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー５</a>
-      </li>
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー６</a>
-      </li>
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー７</a>
-      </li>
-      <li class="hamburger-window__link">
-        <a class="menu-link" href="#">メニュー８</a>
-      </li>
-    </ul>
-  </div>
-</header>
+</div>
+</body>
+</html>
