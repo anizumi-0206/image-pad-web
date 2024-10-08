@@ -127,3 +127,8 @@
   background: #ccc;
   flex-wrap: wrap;
 }
+body{
+  vertical-align:middle; 
+  padding: 50px 0;
+  text-align: center;
+}
